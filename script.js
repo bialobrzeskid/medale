@@ -5,6 +5,19 @@ const countryData = [
     // Add more countries as needed
 ];
 
+document.addEventListener('DOMContentLoaded', function () {
+    const olympicCircles = document.getElementById('olympic-circles');
+
+    // Wait for the animation to finish before hiding the element
+    setTimeout(() => {
+        olympicCircles.style.opacity = 0;
+        setTimeout(() => {
+            olympicCircles.style.display = 'none';
+        }, 1000); // matches the duration of the animation
+    }, 2000); // Show for 2 seconds before starting the fade-out
+});
+
+
 function calculateTotalMedals(country) {
     return country.gold + country.silver + country.bronze;
 }
